@@ -1,0 +1,1068 @@
+@charset "utf-8";
+
+
+
+/* 基本設定: ページ全体 */
+body {
+    margin: 0 auto;
+    font-family: 'YuGothic', '游ゴシック', 'メイリオ', 'Meiryo',' Osaka', sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: rgb(71, 71, 71);
+}
+div, p, h1, h2, h3, ul, li, img{
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* ----- フォントサイズ  */
+* {
+    font-size: 14px;
+}
+
+
+/* ============  header  ============= */
+header {
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 0.1em solid rgb(238, 238, 238);
+}
+.header-inner {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 0em 0 1.2em;
+}
+.header-right {
+    display: flex;
+}
+/* ---- サイトロゴ  */
+.site-logo {
+    width: 160px;
+    padding: 0.95em 0.2em 0 0;
+}
+.site-logo a {
+    width: 100%;
+}
+.site-logo img {
+    width: 100%;
+}
+.site-logo:hover {
+    opacity: 0.8;
+}
+
+/* ---- 予約ボタン  */
+.contact-box {
+    display: inline-block;
+    padding: 0.8em 0 0.9em 0;
+}
+.contact-box a {
+    display: inline-block;
+    padding: 0.8em 1em;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 1.0;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 0.15em solid black;
+}
+.contact-box a:hover {
+    color: white;
+    background-color: black;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.fa-solid {
+    padding-right: 0.2em;
+}
+
+/* ---- reserveボタン(600px以下のみで表示)  */
+.contact-box_reserve {
+    display: inline-block;
+    margin-right: 5em;
+}
+
+/* ---- 電話予約ボタン(PC非表示)  */
+.contact-box_tel {
+    display: none;
+    margin-right: 1em;
+}
+
+/* ---- メール予約ボタン(PC非表示)  */
+.contact-box_mail {
+    display: none;
+}
+
+/* ---- ヘッダーナビ */
+.pc-nav {
+    display: none;
+}
+.sp-nav {
+    display: flex;
+}
+
+/*　ハンバーガーボタン　*/
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 13;
+    right : 13px;
+    top   : 12px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+  }
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #555;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+.hamburger span:nth-child(1) {
+    top: 10px;
+  }
+.hamburger span:nth-child(2) {
+    top: 20px;
+  }
+.hamburger span:nth-child(3) {
+    top: 30px;
+  }
+  
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+  
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+  
+nav.globalMenuSp {
+    visibility:hidden;
+    position: fixed;
+    z-index : 12;
+    top  : 0;
+    left : 0;
+    color: #000;
+    background: #b1a693;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+    width: 100%;
+    height: 100%;
+  }
+  
+nav.globalMenuSp ul {
+    background: #b1a693;
+    margin: 0 auto;
+    padding: 5em 0 0;
+    width: 100%;
+  }
+  
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+nav.globalMenuSp ul li:hover{
+    opacity: 0.8;
+}
+  
+nav.globalMenuSp ul li a {
+    display: block;
+    padding: 1.2em 0 0;
+    font-size: 1.2em;
+    color: #000;
+    text-decoration :none;
+}
+
+/* ハンバーガーメニューの１番下にあるreserveボタン */
+nav.globalMenuSp ul li:last-child {
+    display: inline-block;
+    padding: 1.5em 0 0;
+}
+nav.globalMenuSp ul li:last-child a {
+    display: inline-block;
+    padding: 0.8em 1em;
+    color: black;
+    font-size: 1.1em;
+    line-height: 1.0;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 0.1em solid black;
+}
+nav.globalMenuSp ul li:last-child a:hover {
+    color: white;
+    background-color: black;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0.8;
+}
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+    visibility:visible;
+    transform: translateY(0%);
+}
+
+
+
+/* ----- (min-width: 600px) ------ */
+
+@media (min-width: 600px) {
+
+    
+
+    /* ---- reserveボタン  */
+    .contact-box_reserve {
+        display: none;
+    }
+
+    /* ---- 電話予約ボタン  */
+    .contact-box_tel {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    /* ---- メール予約ボタン  */
+    .contact-box_mail {
+        display: inline-block;
+        margin-right: 5em;
+    }
+}
+/* ----- (min-width: 900px) ------ */
+
+@media (min-width:900px) {
+    /* ---- ヘッダー  */
+    .header-inner {
+        padding: 0 1em 0 1.2em;
+    }
+
+    /* ---- タイトルロゴ  */
+    .site-logo {
+        width: 190px;
+        padding: 0.58em 0.2em 0 0;
+    }
+
+    /* ---- 電話ボタン、メールボタンPC非表示  */
+    .contact-box {
+        display: none;
+    }
+
+    /* ---- ヘッダーナビ */
+    .sp-nav {
+        display: none;
+    }
+    .pc-nav {
+        display: flex;
+        justify-content: right;
+        padding: 1em 0 0.8em;
+    }
+    .pc-nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .pc-nav li {
+        margin: 0 0.6em;
+    }
+    .nav-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding:0 0.2em 0.2em;
+        font-size: 1.2em;
+        font-weight: bold;
+        word-break: keep-all;
+        line-height: 1.45;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+    .nav-item::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2.2px;
+        color: black;
+        font-size: 1.2em;
+        background: #debab0;
+        bottom: -1px;
+        transform: scale(0, 1);
+        transform-origin: center top; 
+        transition: transform 0.3s;  
+    }   
+    .nav-item:hover::after {
+        transform: scale(1, 1); 
+    }
+    .nav-item span {
+        transform:scale(1.1);
+        font-size: 0.5em;
+        font-weight: normal;
+    }
+}
+
+/* ----- (min-width: 1100px) ------ */
+
+@media (min-width:1100px) {
+    .pc-nav li {
+        margin: 0 1em;
+    }
+}
+
+/* ============  ///header  ============= */
+
+
+
+/* ============  main  ============= */
+
+/******** メインビジュアル ********/
+
+.img-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+.img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ----- (min-width: 400px) ------ */
+
+@media (min-width:400px) {
+    .img-wrap {
+        height: 300px;
+    }
+    .img-wrap img {
+        height: 300px;
+    }
+}
+
+/* ----- (min-width: 700px) ------ */
+
+@media (min-width:700px) {
+    .img-wrap {
+        height: 500px;
+    }
+    .img-wrap img {
+        height: 500px;
+    }
+}
+
+/******** ///メインビジュアル ********/
+
+
+
+/******** コンセプト ********/
+.Concept {
+    padding: 3.5em 2em ;
+    text-align: left;
+    background-color: #efede9;
+}
+
+/* ---- 各タイトル  */
+.Both-title {
+    display: inline-block;
+    padding: 0 0.5em 0.5em 0.5em;
+    font-size: 1.4em;
+    text-align: center;
+    line-height: 0.7;
+    letter-spacing: 0.1em;
+    color: black;
+}
+.Both-title span {
+    text-align: center;
+    font-size: 0.3em;
+    transform:scale(0.05);
+    opacity: 0.6;
+}
+
+/* ---- テキスト部分  */
+.concept-text {
+    margin-top: 1.5em;
+    text-align: left;
+    line-height:1.8em;
+}
+.first {
+    font-size: 1.1em;
+    padding-bottom: 1.2em;
+}
+.concept-text br {
+    display: none;
+}
+
+/* ----- (min-width: 560px) ------ */
+
+@media (min-width:560px) {
+
+    /* ---- テキスト部分  */
+    .Concept {
+        text-align: center;
+    }
+    .concept-text {
+        text-align: center;
+    }
+    .concept-text br {
+        display: block;
+    }
+    .Both-title {
+        text-align: center;
+    }
+}
+/* ----- ///(min-width: 750px) ------ */
+
+/******** ///コンセプト ********/
+
+
+
+/******** ブログ ********/
+
+.Blog {
+    margin-top: 3em;
+    padding: 3.5em 2em;
+}
+.Blog .Both-title {
+    padding-left: 0.6em;
+}
+
+/* ---- ブログリスト  */
+.blog-list {
+    margin: 2em auto 0;
+}
+.blogA {
+    width: 100%;
+    display: flex;
+}
+.blogB {
+    width: 100%;
+    display: flex;
+    margin-top: 2em;
+}
+.blog-box {
+    padding: 0 1em ;
+}
+
+/* ---- ブログ各記事  */
+.blog-item {
+    display: flex;
+}
+.blog-item a {
+    width: 100%;
+}
+.blog-item a:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.blog-item img {
+    width: 100%;
+}
+
+/* ---- ブログ日付  */
+.blog-item .blog-date {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    -o-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* ---- ブログ記事タイトル  */
+.blog-title {
+    margin-top: 0.3em;
+}
+.sp-none {
+    display: none;
+}
+
+/* ---- ブログリンク  */
+.view-more {
+    display: block;
+    margin: 1.8em auto 0;
+    text-align: center;
+}
+.view-more span{
+    padding: 0.4em 0.8em;
+    color: #fff;
+    background-color: #4d3939;
+    font-size: 1.15em;
+}
+.view-more span::before{
+    content: ">";
+    top: 0;
+    left: 0;
+    margin-right: 0.5em;
+}
+.view-more span:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* ----- (min-width: 560px) ------ */
+@media (min-width:560px) {
+    .Blog {
+        text-align: center;
+    }
+    .blog-list {
+        text-align: left;
+    }
+}
+
+/* ----- (min-width: 750px) ------ */
+@media (min-width:750px) {
+    .blog-list {
+        max-width: 1300px;
+        display: flex;
+        text-align: left;
+    }
+    .blogA {
+        flex: 2;
+    }
+    .blogB {
+        flex: 3;
+        margin-top: 0;
+    }
+    .sp-none {
+        display: block;
+    }
+}
+
+/******** ///ブログ  ********/
+
+
+
+/******** メニュー ********/
+.Menu {
+    box-sizing: border-box;
+    margin-top: 3em;
+    padding: 0 2em;
+}
+.menu-list {
+    margin-top: 2em;
+    text-align: center;
+}
+
+/* ---- メニュー各ブロック（Cut,Colorなど）  */
+.menu-title {
+    padding-left: 0.5em;
+    padding-bottom: 0.2em;
+    font-size: 1.4em;
+    font-weight:bold;
+    text-align: left;
+    color: #8e775e;
+    border-bottom: 0.05em solid #8e775e;
+}
+
+/* ---- メニュー各段  */
+.menu-list .list:nth-child(n+2) {
+    margin-top: 3em;
+}
+.listB .list {
+    margin-top: 3em;
+}
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em;
+    border-bottom: 0.1em solid rgb(230, 230, 230);
+}
+.menu-list li:first-of-type {
+    margin-top: 1.2em;
+}
+.menu-list span {
+    text-align: left;
+}
+
+/* ---- メニュー注意事項  */
+.postscript {
+    padding-top: 3.5em;
+    font-size: 0.8em;
+    text-align: right;
+}
+.menu-br {
+    display: block;
+}
+
+/* ----- (min-width: 400px) ------ */
+
+@media (min-width:400px) {
+    .menu-inner {
+        max-width: 490px;
+        margin: 0 auto;
+    }
+    .menu-list .list {
+        max-width: 490px;
+        margin: 0 auto;
+    }
+    .menu-list .list:nth-child(n+2) {
+        margin-top: 3em;
+    }
+    .listB .list {
+        margin-top: 3em;
+    }
+}
+
+/* ----- (min-width: 560px) ------ */
+@media (min-width:560px) {
+    .Menu {
+        text-align: center;
+    }
+}
+
+/* ----- (min-width: 750px) ------ */
+
+@media (min-width:750px) {
+    .Menu {
+        margin-top: 5em;
+    }
+    .menu-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .menu-list {
+        display: flex;
+        text-align: left;
+    }
+    .listA {
+        width: 50%;
+        padding-right: 1em;
+    }
+    .listB {
+        width: 50%;
+        padding-left: 1em;
+    }
+    .listB .list {
+        margin-top: 0em;
+    }
+    .menu-list .list:nth-child(n+2) {
+        margin-top: 3em;
+    }
+
+    /* ---- メニュー注意事項  */
+    .postscript {
+        padding-top: 4em;
+        font-size: 0.95em;
+        text-align: right;
+    }
+    .menu-br {
+        display: none;
+    }
+}
+
+/******** ///メニュー ********/
+
+
+
+/******** スタッフ ********/
+
+.Staff {
+    margin-top: 4em;
+    padding: 3.5em 2em;
+    background-color: #b1a693;
+}
+.staff-list {
+    text-align: center;
+    margin: 2em auto 0;
+}
+
+/* ---- スタッフリスト  */
+.boxA {
+    width: 100%;
+    display: flex;
+}
+.boxB {
+    width: 100%;
+    display: flex;
+    margin-top: 2em;
+}
+.s-group p {
+    margin-top: 0.5em;
+}
+
+/* ---- スタッフ各写真  */
+.s-box {
+    background: #000;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.s-box:nth-child(odd) {
+    margin: 0 2em;
+}
+.s-box:nth-child(even) {
+    margin: 0 2em;
+}
+.staff-list a {
+    width: 100%;
+    overflow:hidden; 
+}
+.staff-list a:hover img {
+    opacity: 0.7;
+    transform: scale(1.05, 1.05);
+}
+.staff-list img {
+    width: 100%;
+    display: block;
+    transition: 0.5s;
+}
+.staff-list img:hover {
+    cursor: pointer;
+}
+.staff-list img:nth-child(odd) {
+    margin-right: 3em;
+}
+.staff-list img:nth-child(even) {
+    margin-left: 3em;
+}
+
+/* ----- (min-width: 400px) ------ */
+
+@media (min-width:400px) {
+    .staff-list {
+        max-width: 450px;
+    }
+}
+
+/* ----- (min-width: 560px) ------ */
+@media (min-width:560px) {
+    .Staff {
+        text-align: center;
+    }
+}
+
+/* ----- (min-width: 750px) ------ */
+
+@media (min-width:750px) {
+    .Staff {
+        margin-top: 5.5em;
+        padding: 4.5em 2em;
+    }
+    .staff-list {
+        display: flex;
+        max-width: 900px;
+        margin: 3em auto 0;
+    }
+    .boxB {
+        margin-top: 0;
+    }
+}
+
+/******** ///スタッフ********/
+
+
+
+
+/******** アクセス  ********/
+.Access {
+    margin-top: 4em;
+}
+.Access .Both-title {
+    padding-left: 1.5em;
+} 
+.access-box {
+    padding: 3.5em 2em;
+}
+
+/* ---- 観葉植物  */
+.access-img img {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* ---- 店のアクセス情報  */
+.access-text {
+    margin-top: 2em;
+    text-align: center;
+}
+.access-text table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+.access-text tr {
+    border-bottom: 0.05em solid rgb(230, 230, 230);
+}
+.access-text th,td {
+    padding-top: 2em;
+    text-align: left;
+    font-size: 1.15em;
+}
+.access-text th {
+    padding-right: 3em;
+    padding-left: 0.8em;
+    vertical-align: top;
+    word-break: keep-all;
+}
+.access-text td {
+    padding-right: 1em;
+    padding-bottom: 0.8em;
+}
+
+/* ---- 店の地図  */
+.Access iframe {
+    display: block;
+    height: 400px;
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* ----- (min-width: 500px) ------ */
+
+@media (min-width:480px) {
+    .access-text th {
+        padding-right: 4.5em;
+        padding-left: 2em;
+    }
+}
+
+
+/* ----- (min-width: 560px) ------ */
+
+@media (min-width:560px) {
+    .Access {
+        text-align: center;
+    }
+}
+
+
+/* ----- (min-width: 900px) ------ */
+
+@media (min-width:900px) {
+    .Access {
+        margin-top: 4.5em;
+    }
+    .access-box {
+        display: flex;
+        justify-content: center;
+    }
+    .access-img {
+        flex: 1;
+        max-width: 500px;
+    }
+    .access-text {
+        flex: 1;
+        max-width: 500px;
+        margin-top: 0;
+    }
+    .Access iframe {
+        height: 500px;
+        margin-top: 2em;
+    }
+}
+
+/******** ///アクセス  ********/
+
+/* ============  ///main  ============= */
+
+
+
+
+/* ============  footer  ============= */
+footer {
+    padding: 3.5em 4em 2em;
+    background-color: #b1a693;
+}
+
+/* ---- フッターロゴ  */
+.f-site-logo {
+    width: 180px;
+}
+.f-site-logo a {
+    width: 100%;
+}
+.f-site-logo img {
+    width: 100%;
+}
+.f-site-logo:hover {
+    opacity: 0.7;
+}
+/* ---- フッターリンク  */
+.footer-link {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.f-link-item {
+    display: inline-block;
+    padding: 0.2em;
+    color: #000;
+    font-size: 1.1em;
+}
+.f-link-item:hover {
+    text-decoration: underline;
+}
+
+/* ---- 予約ボタン（フッター）  */
+
+.f-reserve a {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    color: black;
+    background-color: #b1a693;
+    border: 0.1em solid black;
+    font-size: 1.15em;
+}
+.f-reserve a:hover {
+    color: white;
+    background-color: black;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* ---- ページ著作権  */
+.footB {
+    margin-top: 4em;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+/* ----- (min-width: 600px) ------ */
+
+@media (min-width:600px) {
+    footer {
+        padding: 3.5em 2em 1em;
+    }
+
+    /* ---- フッターリンク  */
+    .footA {
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-link {
+        margin-top: 0;
+    }
+
+    /* ---- 予約ボタン（フッター）  */
+    .f-reserve a {
+        margin-top: 1em;
+    }
+}
+
+/* ----- (min-width: 900px) ------ */
+
+    /* ---- フッターロゴ  */
+    @media (min-width:900px) {
+        .f-site-logo {
+            width: 200px;
+    }
+}
+
+/* ----- (min-width: 600px) ------ */
+
+/* ============  ///footer  ============= */
+
+
+
+/* ============  fixed_banner  ============= */
+
+/*****  ボタンを追従させる
+   ****/
+.fixed_banner {
+    position: fixed;
+    z-index: 10;
+}
+
+/*****  ボタンを伸ばす
+   ****/
+.fixed_banner {
+    display : inline-block;
+    width: 53px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.resereve_tel:hover , .resereve_mail:hover {
+    width: 300px;
+}
+/* （SP画面では非表示にする） */
+.resereve_tel, .resereve_mail {
+    display: none;
+}
+
+/*****  各ボタンの位置設定
+   ****/
+
+/* ---- 電話予約ボタン */
+.resereve_tel {
+    top: 55%;
+    right: 0;
+}
+
+/* ---- メール予約ボタン */
+.resereve_mail {
+    top: 65%;
+    right: 0;
+}
+
+/* ---- スクロールボタン */
+.scroll {
+    top: 80%;
+    right: 0;
+}
+.scroll:hover {
+    opacity: 0.8;
+}
+/* （緩やかにスクロールさせる） */
+html{
+    scroll-behavior: smooth;
+}
+
+/* ----- (min-width: 900px) ------ */
+
+@media (min-width:900px) {
+    /* ---- 電話予約ボタン */
+    .resereve_tel {
+        display: inline-block;
+    }
+
+    /* ---- メール予約ボタン */
+    .resereve_mail {
+        display: inline-block;
+    }
+}
+
+/* ============  ///fixed_banner  ============= */
